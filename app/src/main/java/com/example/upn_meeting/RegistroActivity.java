@@ -1,10 +1,8 @@
 package com.example.upn_meeting;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.hardware.camera2.TotalCaptureResult;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -16,9 +14,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -51,30 +46,24 @@ public class RegistroActivity extends AppCompatActivity {
         TextView existe_correo = (TextView) findViewById(R.id.existe_correo);
         mAuth = FirebaseAuth.getInstance();
 
-        firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                spinner.setVisibility(View.VISIBLE);
-                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null && user.isEmailVerified()) {
+        firebaseAuthStateListener = firebaseAuth -> {
+            spinner.setVisibility(View.VISIBLE);
+            final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null && user.isEmailVerified()) {
 
-                    Intent i = new Intent(RegistroActivity.this, MainActivity2.class);
-                    startActivity(i);
-                    finish();
-                    spinner.setVisibility(View.GONE);
-                    return;
-                }
-                spinner.setVisibility(View.GONE);
-            }
-        };
-
-        existe_correo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(RegistroActivity.this, MainActivity2.class);
+                Intent i = new Intent(RegistroActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
+                spinner.setVisibility(View.GONE);
+                return;
             }
+            spinner.setVisibility(View.GONE);
+        };
+
+        existe_correo.setOnClickListener(v -> {
+            Intent i = new Intent(RegistroActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
         });
 
         mEmail = (EditText) findViewById(R.id.email);

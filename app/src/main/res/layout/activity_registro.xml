@@ -171,6 +171,7 @@
                         android:layout_marginBottom="25dp"
                         android:background="@color/red"
                         android:padding="12dp"
+                        android:onClick="bRegistrar"
                         android:text="Registrar usuario"
                         android:textColor="@color/white"
                         />

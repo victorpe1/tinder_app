@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,12 +12,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        new Handler().postDelayed(() -> {
-            Intent siguiente = new Intent( this, MenuInicioActivity.class);
-            startActivity(siguiente);
-            finish();
-        }, 2000);
-
     }
+
+    public void bDislike(View view){
+        Intent login = new Intent(this, LoginActivity.class);
+        startActivity(login);
+    }
+
+    public void bLike(View view){
+        Intent login = new Intent(this, LoginActivity.class);
+        startActivity(login);
+    }
+
+
 }

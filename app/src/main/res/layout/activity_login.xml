@@ -133,7 +133,9 @@
                         android:textAlignment="center"
                         android:text="Recuperar contraseña"
                         android:textColor="@color/black"
+                        android:onClick="bRecuperarContra"
                         android:textSize="16sp"
+                        android:id="@+id/recuperar_pass"
                         />
 
                 </LinearLayout>
