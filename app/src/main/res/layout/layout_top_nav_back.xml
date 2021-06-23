@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="70dp">
+
     <ImageButton
         android:id="@+id/back"
         android:layout_width="wrap_content"
@@ -19,13 +20,9 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp"
         android:text="Matches (fire)"
-        android:background="@color/colorPrimary"
+        android:textColor="@color/colorPrimary"
         android:textSize="20dp"
         android:textStyle="bold" />
-
-
-
-
 
 
 

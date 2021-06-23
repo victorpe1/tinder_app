@@ -58,7 +58,7 @@ dependencies {
     //Circle ImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation "com.github.dimorinny:show-case-card-view:0.0.1"
-
+    compile 'com.android.support:appcompat-v7:+'
     implementation 'com.github.BakerJQ:Android-InfiniteCards:1.0.5'
    // implementation 'com.google.firebase:firebase-ads:19.7.0'
 

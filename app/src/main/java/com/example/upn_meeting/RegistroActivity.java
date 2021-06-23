@@ -61,7 +61,7 @@ public class RegistroActivity extends AppCompatActivity {
         };
 
         existe_correo.setOnClickListener(v -> {
-            Intent i = new Intent(RegistroActivity.this, MainActivity.class);
+            Intent i = new Intent(RegistroActivity.this, LoginActivity.class);
             startActivity(i);
             finish();
         });

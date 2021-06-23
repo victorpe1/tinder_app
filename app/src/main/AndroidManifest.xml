@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UPN_Meeting">
-        <activity android:name=".MatchActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".DislikeActivity" />
+        <activity android:name=".LikeActivity" />
+        <activity android:name=".MatchActivity" />
         <activity android:name=".AjustesActivity" />
         <activity android:name=".RecuperarContraActivity" />
         <activity android:name=".MainActivity" />

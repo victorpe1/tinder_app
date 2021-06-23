@@ -15,10 +15,10 @@ public class TopNavigation {
     private static final String TAG = "TopNavigation";
 
     public static void setTopNav(BottomNavigationViewEx tv){
-        Log.d(TAG, "setTopNav: Configure la barra de navegacion");
+        Log.d(TAG, "setTopNav: Configure la barra de navegacion view");
     }
 
-    public static void enaNav(final Context context, BottomNavigationViewEx view){
+    public static void enableNav(final Context context, BottomNavigationViewEx view){
         view.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.ic_perfil:

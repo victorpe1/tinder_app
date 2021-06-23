@@ -13,10 +13,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include
-            layout="@layout/layout_top_nav_view"
-            />
-
+    <include layout="@layout/layout_top_nav_view" />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -64,21 +61,25 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:id="@+id/dislike"
-                        android:background="@drawable/round_button_with_border"
                         android:elevation="7dp"
                         android:padding="10dp"
+                        android:background="@drawable/circle"
                         android:onClick="bDislike"
-                        android:src="@drawable/dislike"  />
+                        android:src="@drawable/dislike"
 
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:id="@+id/like"
-                    android:background="@drawable/round_button_with_border"
-                    android:elevation="7dp"
-                    android:padding="10dp"
-                    android:onClick="bLike"
-                    android:src="@drawable/like2" />
+                        />
+
+                    <ImageButton
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:id="@+id/like"
+                        android:elevation="7dp"
+                        android:background="@drawable/circle"
+                        android:layout_margin="@dimen/cardview_default_radius"
+                        android:padding="10dp"
+                        android:onClick="bLike"
+                        android:src="@drawable/like2"
+                        />
 
 
 
@@ -93,7 +94,9 @@
             android:text="No hay nadie nuevo a tu alrededor"
             android:visibility="invisible"
             />
+
     </FrameLayout>
+
 </RelativeLayout>
 
     <ProgressBar
