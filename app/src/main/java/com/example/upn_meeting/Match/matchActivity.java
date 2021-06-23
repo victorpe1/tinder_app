@@ -121,10 +121,8 @@ public class matchActivity extends AppCompatActivity {
                 if(dataSnapshot.exists()) {
                     for (DataSnapshot  match :dataSnapshot.getChildren()){
                         FetchMatchInformation(match.getKey(), match.child("ChatId").toString());
-
                     }
                 }
-
             }
 
             @Override
