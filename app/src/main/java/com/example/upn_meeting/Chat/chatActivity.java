@@ -106,7 +106,7 @@ public class chatActivity extends AppCompatActivity {
 
     mSendButton = findViewById(R.id.enviar);
 
-    mSendButton.setOnClickListener(v -> seendMessage(""));
+    mSendButton.setOnClickListener(v -> seenMessage(""));
 
 
     mRecyclerView.addOnLayoutChangeListener((v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom) -> {
@@ -137,10 +137,6 @@ public class chatActivity extends AppCompatActivity {
         current.updateChildren(lastSenn);
 }
 
-    private List<chat> getDataSetChat() {
-        return null;
-    }
-
     @Override
     protected void onPause() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Usuarios").child(currentUserID);
@@ -159,7 +155,7 @@ public class chatActivity extends AppCompatActivity {
         super.onStop();
     }
 
-    private void seendMessage(final String text ) {
+    private void seenMessage(final String text ) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Usuarios").child(matchId);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -321,8 +317,11 @@ public class chatActivity extends AppCompatActivity {
         yeps_in_UserId_dbReference.removeValue();
 
     }
-    private void seenMessage(String sendMessageText){
-         String sendMessageText = mSendEditex.getText().toString();
+
+
+    private void sendMessage(){
+          String sendMessageText = mSendEditex.getText().toString();
+
         long now =  System.currentTimeMillis();
         String timeStamp = Long.toString(now);
 
@@ -360,6 +359,7 @@ public class chatActivity extends AppCompatActivity {
         }
         mSendEditex.setText(null);
     }
+
 
     private void updateLastMessage() {
 
@@ -452,12 +452,12 @@ public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s)
         if (mRecyclerView.getAdapter() != null && resultsChat.size() > 0)
         mRecyclerView.smoothScrollToPosition(resultsChat.size() - 1);
         else
-        Toast.makeText(chatActivity.this, "Chat Empty", Toast.LENGTH_SHORT).show();
+        Toast.makeText(chatActivity.this, "Chat vacio", Toast.LENGTH_SHORT).show();
 
-        }
+                    }
 
-        }
-        }
+                }
+            }
         }
 
         @Override
@@ -482,17 +482,17 @@ public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s)
                 });
 
                 }
-        private ArrayList<chat> resultsChat = ArrayList<>();
+        private ArrayList<chat> resultsChat = new ArrayList<>();
 
         private List<chat> getDataSetChat(){
-                return resultsChat;
+            return resultsChat;
                 }
+
         @Override
         public void onBackPressed(){
                 super.onBackPressed();
                 finish();
                 return;
                 }
-
 
         }
